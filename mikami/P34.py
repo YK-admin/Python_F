@@ -1,6 +1,10 @@
 import sys
 args = sys.argv
 
-name = args[1]
+input1 = int(args[1])
+input2 = int(args[2])
+input3 = int(args[3])
 
-print("Hello", name, "!", end="")
+sum = input1 + input2 + input3
+
+print(sum, end="")
