@@ -1,2 +1,2 @@
 #mofumofu
-print("His name is POTE who born at the Antarctic Pole.")
+print("His name is POTE who borned at the Antarctic Pole.")
