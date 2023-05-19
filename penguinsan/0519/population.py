@@ -1,4 +1,4 @@
-import sys　# 絶対つけるやつ
+import sys# 絶対つけるやつ
 
 # リストの定義をタプルで並べる、タプルは昇順で要素を並べてくれる
 population_ranking=("China", "India", "U.S.A", "Indonesia", "Pakistan", "Brazil", "Nigeria", "Bangladesh", "Russia", "Mexico")
