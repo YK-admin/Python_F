@@ -1,6 +1,5 @@
 import sys# 絶対つけるやつ
 
-
 # 引数の取得
 args = sys.argv # 絶対つけるやつ
 sentence = args[1]
