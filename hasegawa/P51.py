@@ -21,3 +21,5 @@ animals.pop()
 animals.sort(key = None, reverse = False)
 
 print(animals, end="")
+
+print(args)
