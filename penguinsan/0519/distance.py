@@ -9,7 +9,7 @@ place_from = args[1]
 place_to = args[2]
 
 # 拠点間の距離を求める
-distance_between = distance[place_to] - distance[place_from]
+distance_between = abs(distance[place_to] - distance[place_from])
 
 # 距離を小数第2位まで出力
 print(f"{distance_between:.2f}",end="")
