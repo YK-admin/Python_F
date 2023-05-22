@@ -26,7 +26,7 @@ while flog == 0:
 # 商品購入について
 y_or_n = "Y"
 while money >= min(ven_list.values()) and y_or_n == "Y":
-    item = input("何を購入しますか（番号/cancel）\n")
+    item = input("1.お茶：110\n2.コーヒー：100\n3.ソーダ：160\n4.コーンポタージュ：130\n何を購入しますか（番号/cancel）\n")
     item_num = ven_list[ven_list_num[int(item)]] 
     # cancelの場合おつりをだす
     if item == "cancel":
