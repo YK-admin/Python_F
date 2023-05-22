@@ -1,12 +1,15 @@
 # 自販機リスト
 ven_list = {
-    "お茶":110, "コーヒー":100, "ソーダ":160, "コーンポタージュ":130
+    "お茶":110, "コーヒー":100, "ソーダ":160, "4コーンポタージュ":130
+}
+ven_list_num = {
+    1:"お茶", 2:"コーヒー", 3:"ソーダ", 4:"コーンポタージュ"
 }
 
 # 投入金額について条件を満たすかどうか
 flog = 0
 while flog == 0:
-    money = int(input("お茶：110\nコーヒー：100\nソーダ：160\nコーンポタージュ：130\n投入金額を入力してください\n")
+    money = int(input("1.お茶：110\n2.コーヒー：100\n3.ソーダ：160\n4.コーンポタージュ：130\n投入金額を入力してください\n")
     )
     # 投入金額が100円以下
     if money < min(ven_list.values()):
@@ -22,21 +25,20 @@ while flog == 0:
 
 # 商品購入について
 y_or_n = "Y"
-item = "notcancel"
 while money >= min(ven_list.values()) and y_or_n == "Y":
-    item = input("何を購入しますか（商品名/cancel）\n")
-
+    item = input("何を購入しますか（番号/cancel）\n")
+    item_num = ven_list[ven_list_num[int(item)]] 
     # cancelの場合おつりをだす
     if item == "cancel":
         break
 
     # 残金が100円より多い場合続けて購入するかどうか
-    if money >= ven_list[item] + min(ven_list.values()):
-        money = money - ven_list[item]
+    if money >= item_num + min(ven_list.values()):
+        money = money - item_num
         y_or_n = input(f"残金：{money}円\n続けて購入しますか（Y/N）")
 
     # 選択した商品を買えない時
-    elif money < ven_list[item]:
+    elif money < item_num:
         y_or_n = input(f"そちらの商品は{money}円では購入出来ません\n続けて購入しますか（Y/N）")
 
     # 残金が100円より少ない時おつりをだす
