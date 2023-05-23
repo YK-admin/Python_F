@@ -3,6 +3,7 @@ class Intro:
         self.name = name
         self.age = age 
 
+
     def name_out(self):
         nametxt = "私の名前は"+ self.name +"です"
         return nametxt
