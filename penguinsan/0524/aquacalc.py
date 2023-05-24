@@ -14,8 +14,8 @@ young_number = int(args[3]) #2がはいる
 # 日付オブジェクトを作成
 dt = date(year, month, day)
 
-#土日
-if dt.weekday()>4:
+# 曜日に応じて料金を計算
+if dt.weekday()>4: # 土曜日(5)と日曜日(6)
     adult_price = adult_number * 2400
     young_price = young_number * 1500
     total_price = adult_price + young_price   
