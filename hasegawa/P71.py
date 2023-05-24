@@ -9,8 +9,6 @@ Y = int(args[1][0:4])
 M = int(args[1][4:6])
 D = int(args[1][6:8])
 
-# 曜日の産出
-
 # 曜日の産出の日付形式に変換
 from datetime import date
 dt = date(Y, M, D)
