@@ -10,12 +10,12 @@ class Holiday(Base):
     holi_text = Column('holi_text',String(20))
 
 #水族館の来場者数テーブルの定義
-class Holiday(Base):
+class Attendnum(Base):
     __tablename__ = 'attendnum'
     entry_date = Column('entry_date', Date, primary_key = True)
-    seq = Column('seq', int, primary_key = True)
-    adult = Column('adult', int)
-    child = Column('child', int)
+    seq = Column('seq', Integer, primary_key = True)
+    adult = Column('adult', Integer)
+    child = Column('child', Integer)
 
 def main(args):
     """
