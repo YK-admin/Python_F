@@ -1,0 +1,38 @@
+[
+    {
+        "id": "bcoffee",
+        "name": "ブラックコーヒー",
+        "price": 120,
+        "stock": 10
+    },
+    {
+        "id": "osirko",
+        "name": "おしるこ",
+        "price": 120,
+        "stock": 10
+    },
+    {
+        "id": "asejuice",
+        "name": "アセロラジュース",
+        "price": 140,
+        "stock": 10
+    },
+    {
+        "id": "lemonjuice",
+        "name": "果汁100%レモンジュース",
+        "price": 150,
+        "stock": 10
+    },
+    {
+        "id": "socha",
+        "name": "お～い粗茶",
+        "price": 100,
+        "stock": 10
+    },
+    {
+        "id": "wherewater",
+        "name": "世界のどこかの水",
+        "price": 1000,
+        "stock": 10
+    }
+]
