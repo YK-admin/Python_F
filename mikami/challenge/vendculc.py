@@ -1,12 +1,37 @@
 import math
 
-# 飲み物リストを定義1   
-list = {
-    "お茶": 110,
-    "コーヒー": 100,
-    "ソーダ": 160,
-    "コーンポタージュ": 130,
-}
+# 休日のリストを取得する
+from datetime import date
+from database import session
+from tables import Mst_merhandise
+
+mst_merhandise = session.query(Mst_merhandise).all()
+
+print("-------------------")
+print(mst_merhandise)
+
+list = {}
+
+# 飲み物リストを定義1
+for value in mst_merhandise:
+    if(value.number == 0):
+        continue
+    list[value.name] = {
+        "id": value.id,
+        "number": value.number,
+        "price": value.price,
+    }
+
+def get_min_drink():
+    min_drink = None
+
+    # 初期テキスト
+    for key in list.keys():
+        print(list[key]["name"] + ":" + str(list[key]["number"]))
+        if list[key]["price"] < min_drink or min_drink == None:
+            min_drink = list[key]["price"]
+    
+    return min_drink
 
 # お金リスト定義
 coin = {
@@ -27,14 +52,9 @@ purchase_drinks = {
     "コーンポタージュ": 0,
 }
 
+# 飲み物を定義
+min_drink = get_min_drink()
 
-# 初期テキスト 最安値の定義
-for i in list.keys():
-     print(i + str(list[i]))
-
-# 細かい値を定義
-# 配列の最小値を取得
-min_drink = min(list.values())
 # 入力を受ける最大のお金
 max_money = 10000
 
@@ -61,6 +81,14 @@ while (True):
     # 残額計算 リスト追加
     money = money - list[select_drink]
     purchase_drinks[select_drink] = purchase_drinks[select_drink] + 1
+
+    select_drink_db = session.query(Mst_merhandise).filter_by(name=select_drink).first()
+    select_drink_db.number = select_drink_db.number - 1
+    if select_drink_db == 0:
+        del list[select_drink]
+        get_min_drink()
+    session.add(select_drink_db)
+    session.commit()
 
     # もう買えなければループ終了
     if ( money < min_drink ):
