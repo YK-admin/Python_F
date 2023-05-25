@@ -18,6 +18,7 @@ fruits = ("リンゴ", "みかん", "バナナ") # 果物類
 alcohol = ("ビール", "日本酒") # 酒類
 noodles = ("ラーメン", "うどん", "パスタ") #麺類
 
+
 # 果物類の値の更新
 if item_classification == '果物類': # 入力テキストと変数の一致したとき
     for i in fruits: # 変数fruitで以下の動作を回す
@@ -25,6 +26,7 @@ if item_classification == '果物類': # 入力テキストと変数の一致し
         # 減算した値item[i]が1を下回った場合の条件分岐
         if item[i] < 1 :
             item[i] = 1 # 値を1に設定する
+
 
 # 酒類の値の更新
 # 果物類と同じ処理をする
@@ -34,6 +36,7 @@ if item_classification == '酒類':
         if item[i] < 1 :
             item[i] = 1
 
+
 # 麺類の値の更新
 # 果物類と同じ処理をする
 if item_classification == '麺類':
@@ -41,6 +44,7 @@ if item_classification == '麺類':
         item[i] = item[i] - price_cut_amount
         if item[i] < 1 :
             item[i] = 1
+
 
 # 辞書型のデータをすべて出力する。item_classificationで指定した品目は減算した値が出力される。
 print(item,end="") 
