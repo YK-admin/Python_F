@@ -27,7 +27,8 @@ child_people = int(args[3])
 #売上表
 sales_chart = {'W_adult':2000,'W_child':1200, 'H_adult':2400, 'H_child':1500}
 
-
+# 合計額の変数を定義
+sum = 0
 
 # 土日判定
 if 1 <= week <= 5:

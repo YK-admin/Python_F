@@ -16,7 +16,7 @@ from P89_tables import Holiday
 
 # 祝日リストを全件取得
 holidaylist = session.query(Holiday.holi_date).all()
-
+print(holidaylist)
 # 曜日の産出の日付形式に変換
 from datetime import date
 dt = date(Y, M, D)
